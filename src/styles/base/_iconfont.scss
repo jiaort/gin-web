@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('~@/assets/iconfont/iconfont.eot');
+    src: url('~@/assets/iconfont/iconfont.eot') format('embedded-opentype'),
+        url('~@/assets/iconfont/iconfont.woff2') format('woff2'),
+        url('~@/assets/iconfont/iconfont.woff') format('woff'),
+        url('~@/assets/iconfont/iconfont.ttf') format('truetype'),
+        url('~@/assets/iconfont/iconfont.svg') format('svg');
+}
+
+.iconfont {
+    font-family: 'iconfont' !important;
+    font-size: inherit;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_warning:before {
+    content: '\e662';
+}
+
+.icon_computer:before {
+    content: '\e660';
+}
+
+.icon_document:before {
+    content: '\e661';
+}
+
+.icon_keyboard:before {
+    content: '\e65e';
+}
+
+.icon_power:before {
+    content: '\e65f';
+}
+
+.icon_right1:before {
+    content: '\e65c';
+}
+
+.icon_up:before {
+    content: '\e65d';
+}
+
+.icon_minimize:before {
+    content: '\e659';
+}
+
+.icon_edit:before {
+    content: '\e65a';
+}
+
+.icon_vote:before {
+    content: '\e65b';
+}
+
+.icon_zhuangtai_close:before {
+    content: '\e658';
+}
+
+.icon_attention:before {
+    content: '\e649';
+}
+
+.icon_close:before {
+    content: '\e64a';
+}
+
+.icon_switch_off:before {
+    content: '\e64b';
+}
+
+.icon_right:before {
+    content: '\e64c';
+}
+
+.icon_close_cricle:before {
+    content: '\e64d';
+}
+
+.icon_notice:before {
+    content: '\e64e';
+}
+
+.icon_head:before {
+    content: '\e64f';
+}
+
+.icon_small_more:before {
+    content: '\e650';
+}
+
+.icon_left:before {
+    content: '\e651';
+}
+
+.icon_user:before {
+    content: '\e652';
+}
+
+.icon_switch_on:before {
+    content: '\e653';
+}
+
+.icon_clean:before {
+    content: '\e654';
+}
+
+.icon_password:before {
+    content: '\e655';
+}
+
+.icon_right_more:before {
+    content: '\e656';
+}
+
+.icon_down_more:before {
+    content: '\e657';
+}

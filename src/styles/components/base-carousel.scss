@@ -1,0 +1,47 @@
+.base_carousel {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    z-index: 10;
+
+    > .mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $dialogColor;
+    }
+
+    > .header {
+        .close_btn {
+            position: absolute;
+            right: $baseSpace * 2;
+            top: $baseSpace * 2;
+            font-size: 4rem;
+            color: $textReverseColor;
+            cursor: pointer;
+            z-index: 12;
+
+            &:hover {
+                color: $activeColor;
+            }
+        }
+    }
+
+    > .body {
+        text-align: center;
+        z-index: 11;
+        @include inCenter();
+        @extend .un_selected;
+
+        > img {
+            max-width: calc(100vw - #{$baseSpace} * 2);
+            max-height: calc(100vh - #{$baseSpace} * 2);
+            box-shadow: 0px 0px 15px $shadowColor;
+        }
+    }
+}

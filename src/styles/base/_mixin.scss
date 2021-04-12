@@ -1,0 +1,137 @@
+// 自动添加浏览器前缀的mixin
+@mixin prefixer($property, $value, $prefixes: webkit moz ms) {
+    #{$property}: $value;
+
+    @each $prefix in $prefixes {
+        @if $prefix==webkit {
+            -webkit-#{$property}: #{$value};
+        } @else if $prefix==moz {
+            -moz-#{$property}: #{$value};
+        } @else if $prefix==o {
+            -o-#{$property}: #{$value};
+        } @else if $prefix==ms {
+            -ms-#{$property}: #{$value};
+        }
+    }
+}
+
+// 自动添加浏览器前缀的mixin(给value添加)
+@mixin prefixerValue($property, $value, $prefixes: webkit moz ms) {
+    #{$property}: $value;
+
+    @each $prefix in $prefixes {
+        @if $prefix==webkit {
+            #{$property}: -webkit-#{$value};
+        } @else if $prefix==moz {
+            #{$property}: -moz-#{$value};
+        } @else if $prefix==o {
+            #{$property}: -o-#{$value};
+        } @else if $prefix==ms {
+            #{$property}: -ms-#{$value};
+        }
+    }
+}
+
+// 用于替代map-get 项目颜色
+@function commonColor($key) {
+    @if map-has-key($commonColor, $key) {
+        @return map-get($commonColor, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $commonColor.";
+    @return null;
+}
+
+// 主题化的mixin
+@mixin themify($themes: $themes) {
+    @each $theme-name, $map in $themes {
+        .theme-#{$theme-name} & {
+            $theme-map: () !global;
+            @each $key, $value in $map {
+                $theme-map: map-merge(
+                    $theme-map,
+                    (
+                        $key: $value
+                    )
+                ) !global;
+            }
+
+            @content;
+
+            $theme-map: null !global;
+        }
+    }
+}
+
+// themed函数
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+// hsla 颜色
+@function hslaColor($h, $s, $l, $a) {
+    @return hsla($h, $s, $l, $a);
+}
+
+// 虚线 可控制虚线间距
+@mixin dashLine($direction, $spacing, $color) {
+    @if $direction==y {
+        width: 1px;
+        height: 100%;
+        background-size: 1px #{$spacing};
+        background-repeat: repeat-y;
+        @include prefixer(
+            $property: background-image,
+            $value: linear-gradient(to bottom, #{$color} 0%, #{$color} 50%, transparent 50%)
+        );
+    } @else if $direction==x {
+        height: 1px;
+        width: 100%;
+        background-size: #{$spacing} 1px;
+        background-repeat: repeat-x;
+        @include prefixer(
+            $property: background-image,
+            $value: linear-gradient(to right, #{$color} 0%, #{$color} 50%, transparent 50%)
+        );
+    }
+}
+
+// 横向列表竖线分隔
+@mixin addListSeparator($height, $spacing, $color) {
+    &:not(:last-child) {
+        position: relative;
+        padding-right: $spacing;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0px;
+            top: calc((100% - #{$height}) / 2);
+            height: $height;
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-right-color: $color;
+        }
+    }
+
+    &:not(:first-child) {
+        padding-left: $spacing;
+    }
+}
+
+// 中间显示 需要父元素relative
+@mixin inCenter($position: 'all') {
+    position: absolute;
+
+    @if $position== 'y' {
+        top: 50%;
+        @include prefixer($property: transform, $value: translateY(-50%));
+    } @else if $position== 'x' {
+        left: 50%;
+        @include prefixer($property: transform, $value: translateX(-50%));
+    } @else {
+        top: 50%;
+        left: 50%;
+        @include prefixer($property: transform, $value: translateX(-50%) translateY(-50%));
+    }
+}

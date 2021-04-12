@@ -1,0 +1,16 @@
+@import './home.scss';
+@import './error.scss';
+@import './home-tools-image.scss';
+@import './home-tools-train.scss';
+
+#app,
+#error,
+#home,
+#home_tools,
+#home_tools_image {
+    height: 100%;
+
+    &#app {
+        background-color: $bgColor;
+    }
+}

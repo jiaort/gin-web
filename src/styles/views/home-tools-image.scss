@@ -1,0 +1,60 @@
+$codeMaxHeight: 600px;
+$codeMinHeight: 40px;
+$imgSize: 300px;
+
+#home_tools_image {
+    > .upload_box {
+        .el-upload-list {
+            display: none; // 始终不展示文件名称
+        }
+    }
+
+    > .img_list_box {
+        padding-top: $baseSpace;
+        @extend .clearfix;
+
+        > .img_list {
+            float: left;
+
+            &:not(:first-child) {
+                margin-left: $baseSpace * 2;
+            }
+
+            > .img_title {
+                font-size: 1.6rem;
+                padding: $baseSpace 0;
+                line-height: $baseSpace * 2;
+            }
+
+            > .img_box {
+                display: inline-block;
+                height: $imgSize;
+                // margin-top: $baseSpace * 4;
+                background-color: $bgColor;
+                border-radius: $baseSpace * 0.6;
+                overflow: hidden;
+
+                > img {
+                    height: 100%;
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 15px $shadowColor;
+                }
+            }
+        }
+    }
+
+    > .code_box {
+        border-radius: $baseSpace * 0.6;
+        margin-top: $baseSpace * 4;
+        padding: $baseSpace * 2 $baseSpace * 3;
+        width: 800px;
+        min-height: $codeMinHeight;
+        max-height: $codeMaxHeight;
+        background-color: $codeColor;
+        color: $textCodeColor;
+        line-height: 1.6em;
+        overflow: auto;
+    }
+}

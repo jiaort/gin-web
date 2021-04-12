@@ -1,0 +1,11 @@
+// screen >=1920px
+@media screen and (min-width: 1920px) {
+}
+
+// 1440px<= screen <=1920px
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+}
+
+//  screen <=1440px
+@media screen and (max-width: 1439px) {
+}

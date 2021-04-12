@@ -1,0 +1,31 @@
+$fontName: 'Microsoft YaHei', Arial, '微软雅黑', 'Hiragino Sans GB', 'Helvetica Neue', Helvetica,
+    'PingFang SC', sans-serif;
+
+$baseSpace: 10px;
+$baseFontSize: 10px;
+
+$mainColor: #383d47;
+
+$menuColor: $mainColor;
+$navColor: #242831;
+$bgColor: #eee;
+$contentColor: #fff;
+$codeColor: #303030;
+$activeColor: #51e39a;
+$dialogColor: rgba(0, 0, 0, 0.5);
+$shadowColor: rgba(0, 0, 0, 0.7);
+
+$textColor: #666;
+$textLightColor: #999;
+$textDarkColor: #444;
+$textCodeColor: #ccc;
+$textReverseColor: #fff;
+
+$borderColor: #eee;
+$borderDarkColor: #ccc;
+
+:export {
+    menuColor: $menuColor;
+    activeColor: $activeColor;
+    textReverseColor: $textReverseColor;
+}

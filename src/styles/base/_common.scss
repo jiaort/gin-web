@@ -1,0 +1,42 @@
+// 清除浮动
+.clearfix {
+    &:after {
+        display: block;
+        height: 0;
+        clear: both;
+        content: ' ';
+    }
+}
+
+// 文字一行显示
+.oneline_text {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// 文字一行显示,溢出显示省略号
+.oneline_text_ellipsis {
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+// 英文文字两端对齐
+.justify_text {
+    text-align: justify;
+    text-align-last: justify;
+    text-justify: distribute-all-lines;
+
+    &:after {
+        display: inline-block;
+        width: 100%;
+        content: ' ';
+    }
+}
+
+// 不可选中
+.un_selected {
+    @include prefixer($property: user-select, $value: none);
+}

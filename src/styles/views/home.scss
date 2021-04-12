@@ -1,0 +1,65 @@
+$menuWidth: 240px;
+$navHeight: 50px;
+$logoHeight: $navHeight;
+
+#home {
+    display: flex;
+
+    > .aside {
+        display: flex;
+        flex-direction: column;
+        width: $menuWidth;
+        color: $textReverseColor;
+        @extend .un_selected;
+
+        > .logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: $logoHeight;
+            padding: $baseSpace $baseSpace * 3;
+            background-color: $activeColor;
+
+            > img {
+                height: 100%;
+            }
+
+            > .app_name {
+                flex: 1;
+                font-size: 1.6rem;
+                font-weight: normal;
+                padding-left: $baseSpace;
+            }
+
+            > .seo_name {
+                text-indent: -9999em;
+            }
+        }
+
+        > .menu {
+            flex: 1;
+            display: flex;
+            border-top: $baseSpace * 2 solid $menuColor;
+            border-right: 1px solid $menuColor;
+        }
+    }
+
+    > .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        > .nav {
+            display: flex;
+            height: $navHeight;
+        }
+
+        > .body {
+            flex: 1;
+            margin: $baseSpace;
+            padding: $baseSpace * 2;
+            background-color: $contentColor;
+            overflow: auto;
+        }
+    }
+}

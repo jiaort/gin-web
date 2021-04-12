@@ -1,0 +1,15 @@
+#home_tools_train {
+    height: 100%;
+
+    .code_box {
+        border-radius: $baseSpace * 0.6;
+        margin-top: $baseSpace * 4;
+        padding: $baseSpace * 2 $baseSpace * 3;
+        width: 800px;
+        height: $codeMaxHeight;
+        background-color: $codeColor;
+        color: $textCodeColor;
+        line-height: 1.6em;
+        overflow: auto;
+    }
+}
